@@ -1,11 +1,18 @@
-import { BrowserRouter } from 'react-router-dom';
-import { useEffect } from "react";
-import Navbar from './components/Navbar';
-import $ from 'jquery';
-import logo from './logo.svg';
+import { BrowserRouter } from "react-router-dom";
+import "./App.css";
+import AboutMe from "./components/AboutMe/AboutMe";
+import ContactMe from "./components/ContactMe/ContactMe";
+import Footer from "./components/Footer/Footer";
+import Home from "./components/Hero/Intro";
+import Projects from "./components/MyWork/projects";
+import Navbar from "./components/Navbar/Navbar";
+import Services from "./components/Services/Services";
+import Progress from "./components/SkillBars/progress";
+import $ from "jquery";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import './App.css';
+import { useEffect } from "react";
+import Email from "./components/EmailMe/Email";
 
 function App() {
   // Preloader
@@ -25,6 +32,7 @@ function App() {
       once: true,
     });
   }, []);
+
   return (
     <>
       <BrowserRouter>
@@ -33,7 +41,15 @@ function App() {
         </div>
         <div className="homepage">
           <Navbar />
+          <Home />
         </div>
+        <AboutMe />
+        <Services />
+        <Progress />
+        <Projects />
+        <ContactMe />
+        <Email />
+        <Footer />
       </BrowserRouter>
     </>
   );
